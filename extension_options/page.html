@@ -15,12 +15,6 @@
         <br />
 
         <span>Number format:</span>
-        <!-- <select id="number-format">
-          <option value="%num%">1</option>
-          <option value="%num%.">1.</option>
-          <option value="#%num%">#1.</option>
-        </select> -->
-
         <br />
         <input type="radio" id="nf_normal" name="number_format" value="%num%"/>
         <label for="nf_normal">1</label>
@@ -30,7 +24,20 @@
         <br />
         <input type="radio" id="nf_hashtag" name="number_format" value="#%num%"/>
         <label for="nf_hashtag">#1</label>
+        <br />
+        <br />
 
+        <span>What should be numerized:</span>
+        <br />
+        <input type="checkbox" id="numerize_playlists" value="playlists" name="affected"/>
+        <label for="numerize_playlists">Playlists</label>
+        <br />
+        <input type="checkbox" id="numerize_albums" value="albums" name="affected"/>
+        <label for="numerize_albums">Albums</label>
+        <br />
+        <input type="checkbox" id="numerize_collection" value="collection" name="affected"/>
+        <label for="numerize_collection">Own song collection</label>
+        <br />
         <br />
         <br />
         <button id="save-button">Save settings</button>

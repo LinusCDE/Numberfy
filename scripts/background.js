@@ -7,7 +7,8 @@ let _STORAGE_ITEMS = { }
  */
 function getStorage(callback) {
   chrome.storage.sync.get({
-    number_format: '%num%.'
+    number_format: '%num%.',
+    affected: ['playlists', 'albums', 'collection']
   }, (items) => {
     _STORAGE_ITEMS = Object.assign({}, items)
     callback(items)

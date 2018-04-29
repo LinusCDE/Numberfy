@@ -1,13 +1,23 @@
-let NUMBER_FORMAT = '%num%.'
+let NUMBER_FORMAT = null
+let AFFECTED = null
 
 
 /**
- * Checks for a matching url that represents an playlist or album
+ * Checks if the url is matching and the user wants the certain type to be numerized
  */
 function isTracklistSupportedUrl() {
   let url = document.location.href
-  return (url.match(/http(s)?:\/\/open\.spotify\.com\/user\/.+\/playlist\/.+/) != null
-          || url.match(/http(s)?:\/\/open\.spotify\.com\/album\/.+/) != null)
+
+  if(AFFECTED.includes('playlists') && url.match(/http(s)?:\/\/open\.spotify\.com\/user\/.+\/playlist\/.+/) != null)
+    return true
+
+  if(AFFECTED.includes('albums') && url.match(/http(s)?:\/\/open\.spotify\.com\/album\/.+/) != null)
+    return true
+
+  if(AFFECTED.includes('collection') && url.match(/http(s)?:\/\/open\.spotify\.com\/collection\/tracks/) != null)
+    return true
+
+  return false
 }
 
 /**
@@ -102,5 +112,6 @@ function initialize() {
 
 chrome.runtime.sendMessage('get_storage', (items) => {
   NUMBER_FORMAT = items.number_format
+  AFFECTED = items.affected
   initialize()
 })
