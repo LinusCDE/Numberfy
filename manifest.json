@@ -1,6 +1,6 @@
 {
     "name": "Numberfy (Numbers in Spotify)",
-    "version": "1.4",
+    "version": "1.45",
     "description": "Adds numbers to songs in spotify playlists and albums.",
     "manifest_version": 2,
     "icons": {
@@ -22,5 +22,7 @@
         "all_frames": false,
         "js": ["scripts/spotify_numerizer.js"]
     }],
-    "options_page": "extension_options/page.html"
+    "page_action": {
+      "default_popup": "extension_popup/page.html"
+    }
 }

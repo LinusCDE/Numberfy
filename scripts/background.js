@@ -1,4 +1,5 @@
-// Essentially storage management
+// -------------------------------------------------------
+// Storage:
 
 let _STORAGE_ITEMS = { }
 
@@ -24,8 +25,10 @@ function updateStorage(items) {
   chrome.storage.sync.set(_STORAGE_ITEMS)
 }
 
+// -------------------------------------------------------
 
-// Provide storage via sendMessage
+
+// onMessage-Handler:
 chrome.runtime.onMessage.addListener((request, sender, callbackFunc) => {
   if(request === 'get_storage') {
     getStorage((items) => {
@@ -33,4 +36,7 @@ chrome.runtime.onMessage.addListener((request, sender, callbackFunc) => {
     })
     return true // Indicates to chrome that the callback is async and'll come later
   }
+
+  if(request === 'page_action_show')
+    chrome.pageAction.show(sender.tab.id)
 })

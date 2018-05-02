@@ -35,6 +35,13 @@ function saveSettings() {
     number_format: getNumberFormatValue(),
     affected: getAffected()
   })
+
+  let setHintDisplayed = (display) => {
+    document.getElementById('apply-hint').style.display = display ? 'block' : 'none'
+  }
+
+  setHintDisplayed(true)
+  setTimeout(setHintDisplayed, 5000, false)
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -115,3 +115,4 @@ chrome.runtime.sendMessage('get_storage', (items) => {
   AFFECTED = items.affected
   initialize()
 })
+chrome.runtime.sendMessage('page_action_show', () => {})

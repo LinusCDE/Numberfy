@@ -1,0 +1,18 @@
+body {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+* {
+  font-family: "Roboto";
+}
+
+#content {
+  width: 20em;
+  padding: 1em 1em;
+  background-color: #4CAF50; /* Material color: Green 500 */
+}
+
+#apply-hint {
+  display: none;
+}

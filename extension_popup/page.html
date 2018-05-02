@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Settings for Numberfy</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div id="content">
+      <h1>Settings for Numberfy</h1>
+      <br />
+
+      <span>Number format:</span>
+      <br />
+      <input type="radio" id="nf_normal" name="number_format" value="%num%"/>
+      <label for="nf_normal">1</label>
+      <br />
+      <input type="radio" id="nf_dot" name="number_format" value="%num%."/>
+      <label for="nf_dot">1.</label>
+      <br />
+      <input type="radio" id="nf_hashtag" name="number_format" value="#%num%"/>
+      <label for="nf_hashtag">#1</label>
+      <br />
+      <br />
+
+      <span>What should be numerized:</span>
+      <br />
+      <input type="checkbox" id="numerize_playlists" value="playlists" name="affected"/>
+      <label for="numerize_playlists">Playlists</label>
+      <br />
+      <input type="checkbox" id="numerize_albums" value="albums" name="affected"/>
+      <label for="numerize_albums">Albums</label>
+      <br />
+      <input type="checkbox" id="numerize_collection" value="collection" name="affected"/>
+      <label for="numerize_collection">Own song collection</label>
+      <br />
+      <br />
+      <br />
+      <button id="save-button">Save settings</button>
+      <p id="apply-hint">Refresh the page, to apply the settings.</p>
+    </div>
+
+  </body>
+
+</html>
