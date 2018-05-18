@@ -1,5 +1,5 @@
-const BG = chrome.extension.getBackgroundPage()
-const STORAGE_ITEMS = BG.getStorage()
+const BACKGROUND_PAGE = chrome.extension.getBackgroundPage()
+const STORAGE_ITEMS = BACKGROUND_PAGE.getStorage()
 
 function getAffected() {
   let affectedList = []
@@ -31,7 +31,7 @@ function selectNumberFormatValue(value) {
 }
 
 function saveSettings() {
-  BG.updateStorage({
+  BACKGROUND_PAGE.updateStorage({
     number_format: getNumberFormatValue(),
     affected: getAffected()
   })
@@ -45,7 +45,7 @@ function saveSettings() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  BG.getStorage((items) => {
+  BACKGROUND_PAGE.getStorage((items) => {
     console.log(items)
     selectNumberFormatValue(items.number_format)
     selectAffected(items.affected)

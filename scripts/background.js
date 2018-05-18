@@ -34,9 +34,9 @@ chrome.runtime.onMessage.addListener((request, sender, callbackFunc) => {
     getStorage((items) => {
       callbackFunc(items)
     })
-    return true // Indicates to chrome that the callback is async and'll come later
+    return true // Indicates to chrome that the callback is async and will get invoked later
   }
 
-  if(request === 'page_action_show')
+  if(request === 'show_page_action')
     chrome.pageAction.show(sender.tab.id)
 })
