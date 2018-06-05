@@ -24,10 +24,8 @@ function getNumberFormatValue() {
 }
 
 function selectNumberFormatValue(value) {
-  for(radioBtn of document.getElementsByName('number_format')) {
-    if(radioBtn.value === value)
-      radioBtn.checked = true
-  }
+  for(radioBtn of document.getElementsByName('number_format'))
+      radioBtn.checked = (radioBtn.value === value)
 }
 
 function saveSettings() {
