@@ -8,7 +8,7 @@ let AFFECTED_URL_TYPES = null
 function getUrlType() {
   let url = document.location.href
 
-  if(url.match(/http(s)?:\/\/open\.spotify\.com\/user\/.+\/playlist\/.+/) != null)
+  if(url.match(/http(s)?:\/\/open\.spotify\.com\/playlist\/.+/) != null)
     return 'playlist'
 
   if(url.match(/http(s)?:\/\/open\.spotify\.com\/album\/.+/) != null)
